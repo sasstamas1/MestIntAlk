@@ -65,6 +65,10 @@ public class Jatek {
             } while (!operator.alkalmazhato(allapot,babu));
             Jatekos jatekos = allapot.getJatekos();
             allapot = operator.alkalmaz(allapot, babu);
+            if (!allapot.alkalmazhato_operatorok()){
+                System.out.println(allapot.jatekos + " nyert!");
+                break;
+            }
             if (jatekos == Jatekos.Szamitogep){
                 allapot.setJatekos(Jatekos.On);
             }
@@ -77,9 +81,6 @@ public class Jatek {
                 e.printStackTrace();
             }
 
-            if (!allapot.alkalmazhato_operatorok()){
-                break;
-            }
         }
     }
 }
